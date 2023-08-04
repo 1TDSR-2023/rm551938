@@ -9,22 +9,17 @@
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
+
 <body>
-    
-    <h1>Lista de tarefas: </h1>
     <form>
-     <label for="tarefa">tarefa:</label>
-     <input type="text" id="tarefa"/>
- 
-     <button type="submit" onsubmit="adicionarTarefa">Enviar</button>
- 
-     <h2>Lista de tarefas: </h2>
-     <ul id="">
- 
-     </ul>
- </form>
-
-
-
+        <label for="tarefa">Escreva aqui a tarefa: </label>
+        <input type="text" id="tarefa" />
+        <button type="button" onclick="adicionarTarefa()">Adicionar</button>
+    </form>
+    
+    <h2>Lista de Tarefas:</h2>
+    <ul id="listaDeTarefas">
+        
+    </ul>
 </body>
 </html>
