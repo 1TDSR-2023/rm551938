@@ -10,9 +10,20 @@ botaoAddTarefa.addEventListener("click", (evento)=>{
     //pegando os valores dos campos
     const inputTarefa = document.querySelector("#idTarefa");
     
+    //inserindo a nova tarefa no array com o método push
     listaTarefasArray.push(inputTarefa.value);
     
+    //Recuperando a lista UL através do id com querySelector();
+    const listaTarefasUL = document.querySelector("#lista-tarefas");
+
+    //elemento li criado.
+    let li = document.createElement("li");
     
+    //Adicionando texto dentro do elemento LI;
+    li.textContent = inputTarefa.value;
+
+    //Adicionando o elemento LI a UL.
+    listaTarefasUL.appendChild(li);
     
     
     inputTarefa.value = "";
