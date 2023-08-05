@@ -1,30 +1,57 @@
-//Lista Vazia de tarefas
+
+//Criando a lista de tarefas array vazia...
 let listaTarefasArray = [];
 
-//recuperando o botão do formulário que vai iniciar o processo de inserção da tarefa.
+//Recuperando o botão do formulário que vai iniciar o processo de inserção da tarefa.
 const botaoAddTarefa = document.querySelector("#btnAddTarefa");
 
-//adicionando um listener ao botão para criar um evento de clique
+//Adicionando um listener ao botão para esperar um clique que vai disparar a ação.
 botaoAddTarefa.addEventListener("click", (evento)=>{
     evento.preventDefault();
-    //pegando os valores dos campos
+    //Pegando os valores dos campos
     const inputTarefa = document.querySelector("#idTarefa");
     
-    //inserindo a nova tarefa no array com o método push
+    //Inserindo a nova tarefa no array com o método push();
     listaTarefasArray.push(inputTarefa.value);
     
     //Recuperando a lista UL através do id com querySelector();
     const listaTarefasUL = document.querySelector("#lista-tarefas");
 
-    //elemento li criado.
+    //Elemento li criado.
     let li = document.createElement("li");
-    
-    //Adicionando texto dentro do elemento LI;
+
+    //Adiocionando texto dentro do elemento LI;
     li.textContent = inputTarefa.value;
 
-    //Adicionando o elemento LI a UL.
+    //Adicionando o elemento li a UL.
     listaTarefasUL.appendChild(li);
+
+    //Criando o bot"ao de excluir tarefas.
+    let botaoApagaTarefa = document.createElement("button");
+
+    //Inserindo o nó de texto do botão
+    botaoApagaTarefa.textContent = " x ";
+
+    //Adicionando um botão para apagar a tarefa!
+    li.appendChild(botaoApagaTarefa);
+
+    botaoApagaTarefa.addEventListener("click",(e)=>{
+
+        listaTarefasArray.forEach(tarefa=>{
+            if (tarefa ==  e.target.parentNode.textContent.split(" ")[0]){
+                listaTarefasArray.splice(listaTarefasArray.indexOf(tarefa),1);
+            }
+        });
+
+                //Removendo do HTML
+                e.target.parentNode.remove();
+                console.log(listaTarefasArray);
+    });
     
-    
+
+
+    console.log(listaTarefasArray);
     inputTarefa.value = "";
 });
+
+
