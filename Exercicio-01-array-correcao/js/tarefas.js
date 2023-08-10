@@ -1,15 +1,15 @@
 
 
-const numeros = [1,2,3,4,5,6,7,8,9,10];
+// const numeros = [1,2,3,4,5,6,7,8,9,10];
 
-const numerosPares = numeros.map( (numero) =>{
-    if(numero % 2 == 0){
-        return numero;
-    }
+// const numerosPares = numeros.map( (numero) =>{
+//     if(numero % 2 == 0){
+//         return numero;
+//     }
 
-}).filter((numero) => numero != undefined); 
+// }).filter((numero) => numero != undefined); 
 
-console.log( numerosPares);     
+// console.log( numerosPares);     
 
 
 
