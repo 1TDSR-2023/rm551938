@@ -1,4 +1,20 @@
 
+
+const numeros = [1,2,3,4,5,6,7,8,9,10];
+
+const numerosPares = numeros.map( (numero) =>{
+    if(numero % 2 == 0){
+        return numero;
+    }
+
+}).filter((numero) => numero != undefined); 
+
+console.log( numerosPares);     
+
+
+
+
+
 //Criando a lista de tarefas array vazia...
 let listaTarefasArray = [];
 
@@ -37,21 +53,82 @@ botaoAddTarefa.addEventListener("click", (evento)=>{
 
     botaoApagaTarefa.addEventListener("click",(e)=>{
 
-        listaTarefasArray.forEach(tarefa=>{
-            if (tarefa ==  e.target.parentNode.textContent.split(" ")[0]){
-                listaTarefasArray.splice(listaTarefasArray.indexOf(tarefa),1);
-            }
+        // listaTarefasArray.forEach(tarefa=>{
+        //     if (tarefa ==  e.target.parentNode.textContent.split(" ")[0]){
+        //         listaTarefasArray.splice(listaTarefasArray.indexOf(tarefa),1);
+        //     }
+        // });
+
+       let conteudoTarefa = e.target.parentNode.textContent.split(" ")[0];
+
+    //    let indiceTarefa = listaTarefasArray.indexOf(conteudoTarefa);
+       
+       //Removendo o elemento do array através do índice com o método splice() e map;
+    //    listaTarefasArray.splice(indiceTarefa,1);
+        
+       listaTarefasArray.map( (tarefa,index) =>{
+
+            if(tarefa == conteudoTarefa ){
+                listaTarefasArray.splice(index,1);
+            }   
+       
         });
 
-                //Removendo do HTML
-                e.target.parentNode.remove();
-                console.log(listaTarefasArray);
+       //Removendo o elemento li do HTML;
+       e.target.parentNode.remove();
+       console.log(listaTarefasArray);
     });
     
-
+    
 
     console.log(listaTarefasArray);
     inputTarefa.value = "";
 });
 
 
+// const filaBrinquedo = [
+//     { name: 'Ana', age: 9 },
+//     { name: 'Vinicius', age: 11 },
+//     { name: 'Julia', age: 11 },
+//     { name: 'Gabriel', age: 10 },
+//     { name: 'Lucas', age: 11 }
+// ]
+
+// const resultado = filaBrinquedo.every( (pessoa) => pessoa.age <= 12);
+// console.log(resultado == true ? 'Pode entrar' : 'Não pode entrar');
+
+// const filaBrinquedo = [
+//     { name: 'Ana', age: 9 },
+//     { name: 'Vinicius', age: 14 },
+//     { name: 'Julia', age: 13 },
+//     { name: 'Gabriel', age: 15 },
+//     { name: 'Lucas', age: 12 }
+// ]
+
+// const resultado = filaBrinquedo.some( (pessoa) => pessoa.age <= 12);
+// console.log(resultado == true ? 'Pode entrar' : 'Não pode entrar');
+
+
+// const filaBrinquedo = [
+//     { name: 'Ana', age: 13 },
+//     { name: 'Vinicius', age: 12 },
+//     { name: 'Julia', age: 13 },
+//     { name: 'Gabriel', age: 15 },
+//     { name: 'Lucas', age: 12 }
+// ]
+
+// const resultado = filaBrinquedo.find( (pessoa) => pessoa.age <= 12);
+// console.log(resultado);
+
+// const convidados = [ 'prof João', 'Ana', 'Caio', 'prof Lara', 'Marjorie', 'prof Leo' ];
+
+// const convidadosProf = convidados.filter( (convidado) => convidado.includes('ã'));
+
+// console.log(convidadosProf);
+
+
+// Exemplo de reduce
+
+const nr = [4,5,8,6,7];
+
+const soma = nr.reduce ( (acumulador, numero) => acumulador + numero, 0)
