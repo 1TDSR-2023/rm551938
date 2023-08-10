@@ -128,7 +128,25 @@ botaoAddTarefa.addEventListener("click", (evento)=>{
 
 
 // Exemplo de reduce
+// const nr = [4,5,8,6,7];
 
-const nr = [4,5,8,6,7];
+// const soma = nr.reduce( (acumulador, numeroAtual) => acumulador + numeroAtual);
 
-const soma = nr.reduce ( (acumulador, numero) => acumulador + numero, 0)
+
+//Declarar um array de objeto de vendas
+const vendas = [
+    { produto: 'sapato', valor: 150 },
+    { produto: 'tenis', valor: 50 },
+    { produto: 'bermuda', valor: 70 },
+    { produto: 'camiseta', valor: 30 }
+];
+
+//Realizar a soma dos valores de vendas com reduce utilizando uma function
+
+// const soma = nr.reduce( (acumulador, numeroAtual) => acumulador + numeroAtual);
+function somaObj(Obj1, Obj2){
+    return {valor: Obj1.valor + Obj2.valor};
+}
+
+const totalVendas = vendas.reduce(somaObj, {valor: 10});
+console.log(totalVendas.valor);
