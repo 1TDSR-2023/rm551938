@@ -3,6 +3,7 @@ let listaDescricaoArray = [];
 let listaAutorArray = [];
 let listaDepartamentoArray = [];
 let listaImportanciaArray = [];
+let listaTarefasArray = [];
 
 const botaoAddItens = document.querySelector("#btnAddItens");
 
@@ -14,11 +15,13 @@ botaoAddItens.addEventListener("click", (evento) => {
     const inputAutor = document.querySelector("#idAutor");
     const inputDepartamento = document.querySelector("#idDepartamento");
     const inputImportancia = document.querySelector("#Importancia");
+    const inputTarefa = document.querySelector("#idTarefa");
 
     listaDescricaoArray.push(inputDescricao.value);
     listaAutorArray.push(inputAutor.value);
     listaDepartamentoArray.push(inputDepartamento.value);
     listaImportanciaArray.push(inputImportancia);
+    listaTarefasArray.push(inputTarefa);
 
     const tabelaDeTarefas = document.querySelector("#tabela-tarefas");
 
@@ -26,6 +29,7 @@ botaoAddItens.addEventListener("click", (evento) => {
     const tdDescricao = document.createElement("td");
     const tdAutor = document.createElement("td");
     const tdDepartamento = document.createElement("td");
+    const tdTarefa = document.createElement("td");
     
     
     const tdImporantcia = document.createElement("td");
@@ -58,9 +62,10 @@ botaoAddItens.addEventListener("click", (evento) => {
 
     btnPraApagarLinha.addEventListener("click", (evento) =>{
 
-        let conteudoCelulas = evento.target.parentNode.textContent.split("*")[0];
+        let trApaga = e.target.parentNode;
 
-        console.log(conteudoCelulas);
+        console.log(trApaga);
+
     });
 
 
