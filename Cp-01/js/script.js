@@ -6,44 +6,62 @@ let listaImportanciaArray = [];
 
 const botaoAddItens = document.querySelector("#btnAddItens");
 
-botaoAddItens.addEventListener("click", (evento) =>{
+botaoAddItens.addEventListener("click", (evento) => {
 
     evento.preventDefault();
 
-    //pegando os valores do inputs
     const inputDescricao = document.querySelector("#idDescricao");
     const inputAutor = document.querySelector("#idAutor");
     const inputDepartamento = document.querySelector("#idDepartamento");
-    const inputImportancia = document.querySelector("#idImportancia");
+    const inputImportancia = document.querySelector("#Importancia");
 
-    //Adicionando cada elemento a sua respectiva array
-    listaDescricaoArray.push(inputDescricao);
-    listaAutorArray.push(inputAutor);
-    listaDepartamentoArray.push(inputDepartamento);
+    listaDescricaoArray.push(inputDescricao.value);
+    listaAutorArray.push(inputAutor.value);
+    listaDepartamentoArray.push(inputDepartamento.value);
     listaImportanciaArray.push(inputImportancia);
 
-    //Criando os elementos da tabela
+    const tabelaDeTarefas = document.querySelector("#tabela-tarefas");
+
     const tr = document.createElement("tr");
     const tdDescricao = document.createElement("td");
     const tdAutor = document.createElement("td");
     const tdDepartamento = document.createElement("td");
-    const tdImportancia = document.createElement("td");
+    
+    
+    const tdImporantcia = document.createElement("td");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.disabled = true;
+    tdImporantcia.appendChild(checkbox);
 
-    //Adicionando os inputs na celula da table
-    tdDescricao.textContent = inputDescricao.value; 
-    tdAutor.textContent = inputAutor.value; 
-    tdDepartamento.textContent = inputDepartamento.value; 
-    tdImportancia.textContent = inputImportancia.value; 
+    
+    
+  
 
-    //Adicionando as células a linha da tabela
+
+    tdDescricao.textContent = inputDescricao.value;
+    tdAutor.textContent = inputAutor.value;
+    tdDepartamento.textContent = inputDepartamento.value;
+
+    tr.appendChild(tdDescricao);
     tr.appendChild(tdAutor);
     tr.appendChild(tdDepartamento);
-    tr.appendChild(tdDescricao);
-    tr.appendChild(tdImportancia);
+    tr.appendChild(tdImporantcia);
 
-    //Adicionando a linha ao corpo da tabela
-    tabela-tarefas.appendChild(tr);
-    
+    tabelaDeTarefas.appendChild(tr);
+
+    let btnPraApagarLinha = document.createElement("button");
+
+    btnPraApagarLinha.textContent = "*APAGAR LINHA*"
+
+    tr.appendChild(btnPraApagarLinha);
+
+    btnPraApagarLinha.addEventListener("click", (evento) =>{
+
+        let conteudoCelulas = evento.target.parentNode.textContent.split("*")[0];
+
+        console.log(conteudoCelulas);
+    });
+
+
 });
-
-

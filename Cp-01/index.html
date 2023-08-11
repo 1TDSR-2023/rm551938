@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rm-551938</title>
+
+    <script src="./js/script.js" defer></script>
+
 </head>
 <body>
     <h1>Tarefas a fazer: </h1>
@@ -13,24 +16,20 @@
             <fieldset>
                 <legend>Cadastro de tarefas</legend>
                 <div>
-                    <label for="idDescrição">Descrição </label>
-                    <input type="text" name="descrição" id="idDescrição" placeholder="Digite aqui a descrição da sua tarefa...">
-                </div>
-                <div>
-                    <label for="idDepartamento">Departamento </label>
-                    <input type="text" name="departamento" id="idDepartamento" placeholder="Digite aqui o departamento da sua tarefa..">
+                    <label for="idDescricao">Descrição </label>
+                    <input type="text" name="descricao" id="idDescricao" placeholder="Digite aqui a descrição da sua tarefa...">
                 </div>
                 <div>
                     <label for="idAutor">Autor </label>
                     <input type="text" name="autor" id="idAutor" placeholder="Digite aqui o autor da sua tarefa...">
                 </div>
                 <div>
-                    <label for="idImportancia">Importância </label>
-                    <select name="importancia" id="idImportancia">
-                        <option value="nivel1">1</option>
-                        <option value="nivel2" selected>2</option>
-                        <option value="nivel3">3</option>
-                    </select>
+                    <label for="idDepartamento">Departamento </label>
+                    <input type="text" name="departamento" id="idDepartamento" placeholder="Digite aqui o departamento da sua tarefa..">
+                </div>
+                <div>
+                    <label for="idImportancia">Tarefa de importância? </label>
+                    <input type="checkbox" name="importancia" id="idImportancia">
                 </div>
                 <div>
                     <button type="submit" id="btnAddItens">Adicionar</button>
@@ -44,8 +43,8 @@
         <table id="tabela-tarefas">
             <tr>
                 <th>Descrição</th>
-                <th>Departamento</th>
                 <th>Autor</th>
+                <th>Departamento</th>
                 <th>importancia</th>
             </tr> 
 
