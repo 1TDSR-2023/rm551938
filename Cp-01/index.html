@@ -32,11 +32,16 @@
                     <input type="text" name="departamento" id="idDepartamento" placeholder="Digite aqui o departamento da sua tarefa..">
                 </div>
                 <div>
-                    <label for="idImportancia">Tarefa de importância? </label>
-                    <input type="checkbox" name="importancia" id="idImportancia">
+                    <label for="idImportancia">Escolha o nivel de importancia:  </label>
+                    <select name="importancia" id="idImportancia"> 
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
                 </div>
                 <div>
                     <button type="submit" id="btnAddItens">Adicionar</button>
+                    <button type="submit" id="btnOrdenar">Ordenar por ordem de importancia</button>
                 </div>
             </fieldset>  
         </form>
@@ -47,9 +52,12 @@
         <table id="tabela-tarefas">
             <tr>
                 <th>Descrição</th>
+                <th>Tarefa</th>
                 <th>Autor</th>
                 <th>Departamento</th>
-                <th>importancia</th>
+                <th>Importancia</th>
+                <th>Tempo</th>
+                <th>Valor</th>
             </tr> 
 
         </table>
